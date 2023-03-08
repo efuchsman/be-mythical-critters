@@ -1,24 +1,24 @@
 var assert = require('chai').assert;
 var Sphinx = require('../exercises/sphinx');
 
-describe('Sphinx', function() {
-  it('should be a function', function() {
+describe('Sphinx', function () {
+  it('should be a function', function () {
     assert.isFunction(Sphinx);
   });
 
-  it('should have no name', function() {
+  it('should have no name', function () {
     var sphinx = new Sphinx();
 
     assert.equal(sphinx.name, null);
   });
 
-  it('should start with no riddles', function() {
+  it('should start with no riddles', function () {
     var sphinx = new Sphinx();
 
     assert.deepEqual(sphinx.riddles, []);
   });
 
-  it('should collect riddles', function() {
+  it('should collect riddles', function () {
     var sphinx = new Sphinx();
     var riddle = {
       riddle: 'What word becomes shorter when you add two letters to it?',
@@ -30,7 +30,7 @@ describe('Sphinx', function() {
     assert.deepEqual(sphinx.riddles, [riddle]);
   });
 
-  it('should collect only three riddles', function() {
+  it('should collect only three riddles', function () {
     var sphinx = new Sphinx();
     var riddle1 = {
       riddle: 'What word becomes shorter when you add two letters to it?',
@@ -57,7 +57,7 @@ describe('Sphinx', function() {
     assert.deepEqual(sphinx.riddles, [riddle2, riddle3, riddle4]);
   });
 
-  it('should accept a correct answer and remove riddle from list', function() {
+  it('should accept a correct answer and remove riddle from list', function () {
     var sphinx = new Sphinx();
     var riddle1 = {
       riddle: 'What word becomes shorter when you add two letters to it?',
@@ -70,7 +70,7 @@ describe('Sphinx', function() {
     assert.deepEqual(sphinx.riddles, []);
   });
 
-  it('should accept answers in any order', function() {
+  it('should accept answers in any order', function () {
     var sphinx = new Sphinx();
     var riddle1 = {
       riddle: 'What word becomes shorter when you add two letters to it?',
@@ -93,7 +93,7 @@ describe('Sphinx', function() {
     assert.deepEqual(sphinx.riddles, [riddle1, riddle2]);
   });
 
-  it('should mock heroes when they get the answer right', function() {
+  it('should mock heroes when they get the answer right', function () {
     var sphinx = new Sphinx();
     var riddle1 = {
       riddle: 'What word becomes shorter when you add two letters to it?',
@@ -117,7 +117,7 @@ describe('Sphinx', function() {
     assert.equal(sphinx.heroesEaten, 0);
   });
 
-  it('should eat the hero if their answer isn\'t correct for any riddles', function() {
+  it('should eat the hero if their answer isn\'t correct for any riddles', function () {
     var sphinx = new Sphinx();
     var riddle1 = {
       riddle: 'What word becomes shorter when you add two letters to it?',
@@ -141,7 +141,7 @@ describe('Sphinx', function() {
     assert.equal(sphinx.heroesEaten, 1);
   });
 
-  it('should scream with rage if a hero gets all riddles correct', function() {
+  it('should scream with rage if a hero gets all riddles correct', function () {
     var sphinx = new Sphinx();
     var riddle1 = {
       riddle: 'What word becomes shorter when you add two letters to it?',
@@ -160,7 +160,7 @@ describe('Sphinx', function() {
     assert.equal(rage, 'PSSSSSSS THIS HAS NEVER HAPPENED, HOW DID YOU KNOW THE ANSWER WAS \"Halfway, after that it\'s running out.\"???');
   });
 
-  it('should scream specifically about the last riddle to be answered', function() {
+  it('should scream specifically about the last riddle to be answered', function () {
     var sphinx = new Sphinx();
     var riddle1 = {
       riddle: 'What word becomes shorter when you add two letters to it?',
