@@ -29,12 +29,12 @@ describe('Centaur', function () {
     assert.equal(centaur.run(), 'Clop clop clop clop!!!');
   });
 
-  it.skip('should not be cranky when first created', function () {
+  it('should not be cranky when first created', function () {
     var centaur = new Centaur('George');
     assert.equal(centaur.cranky, false);
   });
 
-  it.skip('should be standing up when first created', function () {
+  it('should be standing up when first created', function () {
     var centaur = new Centaur('George');
     assert.equal(centaur.standing, true);
   });
